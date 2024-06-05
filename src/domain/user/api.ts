@@ -1,7 +1,9 @@
 import instance from 'src/configs/axios';
-import { FetchCurrentUserResponse } from './types';
+import { GetUserRequest, GetUserResponse } from './types';
 
-export async function fetchCurrentUser(): Promise<FetchCurrentUserResponse> {
-  const response = await instance.get('/user');
+export async function getUser(
+  payload: GetUserRequest,
+): Promise<GetUserResponse> {
+  const response = await instance.get(`/user/${payload.user_id}`);
   return response.data;
 }

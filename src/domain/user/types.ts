@@ -1,8 +1,7 @@
 // Requests
+export interface GetUserRequest {
+  user_id: string;
+}
 
 // Response
-export interface FetchCurrentUserResponse extends Omit<ServerResponse, 'data'> {
-  data: {
-    id: string;
-  };
-}
+export interface GetUserResponse extends ServerResponse<{ user_id: string }> {}

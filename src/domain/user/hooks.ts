@@ -1,6 +1,7 @@
 import { useQuery } from 'react-query';
-import { fetchCurrentUser } from './api';
+import { getUser } from './api';
+import { GetUserRequest } from './types';
 
-export function useFetchCurrentUser() {
-  return useQuery('fetchCurrentUser', fetchCurrentUser);
+export function useGetUser(payload: GetUserRequest) {
+  return useQuery('getUser', () => getUser(payload));
 }
