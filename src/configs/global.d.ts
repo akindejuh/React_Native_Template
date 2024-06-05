@@ -2,10 +2,10 @@ interface User {
   id: string;
 }
 
-interface ServerResponse {
-  ok: boolean;
-  message: string;
-  data: null;
+interface ServerResponse<T> {
+  status: number;
+  msg?: string;
+  data?: T;
 }
 
 declare namespace NodeJS {
