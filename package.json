@@ -2,6 +2,9 @@
   "name": "baseapp",
   "version": "0.0.1",
   "private": true,
+  "repository": "https://github.com/gbenga2540/React_Native_Template.git",
+  "author": "Akindeju Oluwagbemiga",
+  "license": "MIT",
   "scripts": {
     "kill:node": "killall node",
     "kill:java": "killall -9 java",
