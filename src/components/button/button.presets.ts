@@ -29,9 +29,12 @@ export const buttonPresets: Record<buttonPresetsType, ViewStyle> = {
   /**
    * A smaller piece of secondary information.
    */
-  primary: { ...BASE_VIEW, backgroundColor: colors().primary } as ViewStyle,
+  primary: { ...BASE_VIEW, backgroundColor: colors.primary } as ViewStyle,
 
-  secondary: { ...BASE_VIEW, backgroundColor: colors().secondary } as ViewStyle,
+  secondary: {
+    ...BASE_VIEW,
+    backgroundColor: colors.secondary,
+  } as ViewStyle,
 
   /**
    * A button without extras.
@@ -47,17 +50,17 @@ export const buttonPresets: Record<buttonPresetsType, ViewStyle> = {
 export const textPresets: Record<ButtonPresetNames, TextStyle> = {
   primary: {
     ...BASE_TEXT,
-    color: colors().white,
+    color: colors.white,
   } as TextStyle,
 
   secondary: {
     ...BASE_TEXT,
-    color: colors().white,
+    color: colors.white,
   } as TextStyle,
 
   link: {
     ...BASE_TEXT,
-    color: colors().grayText,
+    color: colors.grayText,
     paddingHorizontal: 0,
     paddingVertical: 0,
   } as TextStyle,

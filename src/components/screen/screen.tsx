@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {
+  Appearance,
   KeyboardAvoidingView,
   Platform,
   SafeAreaView,
@@ -9,8 +10,8 @@ import {
   ViewStyle,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { ScreenProps } from './screen.props';
 import { isNonScrolling, offsets, presets } from './screen.presets';
+import { ScreenProps } from './screen.props';
 import { colors } from 'src/design-system';
 
 const isIos = Platform.OS === 'ios';
@@ -19,7 +20,7 @@ function ScreenWithoutScrolling(props: ScreenProps) {
   const preset = presets.fixed;
 
   const backgroundStyle: ViewStyle = {
-    backgroundColor: colors().background,
+    backgroundColor: colors.background,
   };
 
   const screenStyle: ViewStyle = {
@@ -37,8 +38,13 @@ function ScreenWithoutScrolling(props: ScreenProps) {
       behavior={isIos ? 'padding' : undefined}
       keyboardVerticalOffset={offsets[props.keyboardOffset || 'none']}>
       <StatusBar
-        barStyle={props.statusBar || 'dark-content'}
-        backgroundColor={colors().background}
+        barStyle={
+          props.statusBar ?? Appearance.getColorScheme() === 'dark'
+            ? 'light-content'
+            : 'dark-content'
+        }
+        backgroundColor={colors.background}
+        {...props.statusBarProps}
       />
       <View testID={props.testID} />
       {props.header}
@@ -63,7 +69,7 @@ function ScreenWithScrolling(props: ScreenProps) {
   const insets = useSafeAreaInsets();
   const preset = presets.scroll;
   const backgroundStyle: ViewStyle = {
-    backgroundColor: props.backgroundColor || colors().background,
+    backgroundColor: props.backgroundColor || colors.background,
   };
 
   const insetStyle: ViewStyle = {
@@ -84,8 +90,12 @@ function ScreenWithScrolling(props: ScreenProps) {
       style={[preset.outer, backgroundStyle]}
       keyboardVerticalOffset={offsets[props.keyboardOffset || 'none']}>
       <StatusBar
-        barStyle={props.statusBar || 'default'}
-        backgroundColor={colors().background}
+        barStyle={
+          props.statusBar ?? Appearance.getColorScheme() === 'dark'
+            ? 'light-content'
+            : 'dark-content'
+        }
+        backgroundColor={colors.background}
         {...props.statusBarProps}
       />
       <View
