@@ -44,6 +44,7 @@ export const buttonPresets: Record<buttonPresetsType, ViewStyle> = {
     paddingHorizontal: 0,
     paddingVertical: 0,
     borderRadius: 0,
+    height: 'auto',
   } as ViewStyle,
 };
 
@@ -60,7 +61,7 @@ export const textPresets: Record<ButtonPresetNames, TextStyle> = {
 
   link: {
     ...BASE_TEXT,
-    color: colors.grayText,
+    color: colors.linkText,
     paddingHorizontal: 0,
     paddingVertical: 0,
   } as TextStyle,

@@ -11,4 +11,5 @@ export const colors = {
   transparent: 'transparent',
   inputBackground: isDarkMode ? '#1a1a1a' : '#efefef',
   inputPLText: isDarkMode ? '#6a6a6a' : '#9f9f9f',
+  linkText: isDarkMode ? '#4aa3ff' : '#007bff',
 };
