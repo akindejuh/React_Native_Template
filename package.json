@@ -8,7 +8,7 @@
   "scripts": {
     "kill:node": "killall node",
     "kill:java": "killall -9 java",
-    "kill:all": "yarn kill:node && yarn kill:java",
+    "kill:all": "yarn kill:java && yarn kill:node",
     "start": "react-native start",
     "start:reset": "yarn start --reset-cache",
     "android": "react-native run-android",
