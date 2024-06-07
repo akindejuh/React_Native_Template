@@ -22,7 +22,7 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
 
   return (
     <Screen preset="fixed" baseAllowance={10}>
-      <Text text="SignIn Screen" marginTop={20} />
+      <Text text="SignIn Screen" marginTop={20} fontSize={40} />
       <Button
         text="Sign Up"
         preset="link"

@@ -1,6 +1,6 @@
 import { ViewStyle, TextStyle } from 'react-native';
 import { fonts } from 'src/assets/fonts/fonts';
-import { colors } from 'src/design-system';
+import { colors, getComputedWidth } from 'src/design-system';
 
 /**
  * All Buttons will start off looking like this.
@@ -17,7 +17,7 @@ const BASE_VIEW: ViewStyle = {
  */
 const BASE_TEXT: TextStyle = {
   paddingHorizontal: 12,
-  fontSize: 16,
+  fontSize: getComputedWidth(16),
   fontFamily: fonts.primaryFont_400,
 };
 
