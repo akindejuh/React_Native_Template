@@ -8,7 +8,7 @@ export const screenWidth = Math.round(Dimensions.get('window').width);
 export const screenHeight = Math.round(Dimensions.get('window').height);
 
 function getComputed(value: number, type: string) {
-  const dpiBuffer = screenWidth < 376 ? 0.89 : 0.87;
+  const dpiBuffer = screenWidth < 376 ? 0.94 : 0.87;
 
   if (type === 'w') {
     const dpi = 0.267 * dpiBuffer;
