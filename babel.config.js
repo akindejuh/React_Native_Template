@@ -42,5 +42,6 @@ module.exports = {
         alias: getAliasesFromTsConfig(),
       },
     ],
+    'react-native-reanimated/plugin',
   ],
 };
