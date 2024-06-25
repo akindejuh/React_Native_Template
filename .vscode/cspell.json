@@ -3,7 +3,16 @@
   // language - current active spelling language
   "language": "en",
   // words - list of words to be always considered correct
-  "words": [],
+  "words": [
+    "killall",
+    "gradlew",
+    "xcodebuild",
+    "xcworkspace",
+    "codegen",
+    "reduxjs",
+    "jsbundle",
+    "deintegrate"
+  ],
   // flagWords - list of words to be always considered incorrect
   "flagWords": []
 }
