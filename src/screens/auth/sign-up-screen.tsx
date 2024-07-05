@@ -98,6 +98,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
         value={registerData.email}
         setValue={text => handleInputChange('email', text as string)}
         placeholder="johndoe@gmail.com"
+        inputMode="email"
       />
 
       <Text

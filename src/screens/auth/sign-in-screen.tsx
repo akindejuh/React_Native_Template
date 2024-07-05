@@ -76,6 +76,7 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
         setValue={text => handleInputChange('email', text as string)}
         placeholder="johndoe@gmail.com"
         autoFocus={true}
+        inputMode="email"
       />
 
       <Text
