@@ -55,7 +55,7 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
   };
 
   return (
-    <Screen preset="scroll" baseAllowance={200}>
+    <Screen preset="scroll" baseAllowance={300}>
       <Text
         text="Welcome Back!"
         marginTop={40}
