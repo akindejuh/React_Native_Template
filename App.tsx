@@ -13,19 +13,22 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { DEFAULT_CONTAINER } from './src/assets/styles/global';
 import RootStack from 'src/routes/root-stack';
+import { CustomThemeProvider } from 'src/context/theme/theme';
 
 const App: FunctionComponent = () => {
   useAppState();
   useOnlineManager();
 
   return (
-    <GestureHandlerRootView style={DEFAULT_CONTAINER}>
-      <SafeAreaProvider>
-        <NavigationContainer>
-          <RootStack />
-        </NavigationContainer>
-      </SafeAreaProvider>
-    </GestureHandlerRootView>
+    <CustomThemeProvider>
+      <GestureHandlerRootView style={DEFAULT_CONTAINER}>
+        <SafeAreaProvider>
+          <NavigationContainer>
+            <RootStack />
+          </NavigationContainer>
+        </SafeAreaProvider>
+      </GestureHandlerRootView>
+    </CustomThemeProvider>
   );
 };
 
