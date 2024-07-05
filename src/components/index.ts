@@ -2,6 +2,7 @@ export * from './button/button';
 export * from './divider/divider';
 export * from './icon/icon';
 export * from './image/image';
+export * from './otp-field/otp-field';
 export * from './screen/screen';
 export * from './text/text';
 export * from './view/view';
