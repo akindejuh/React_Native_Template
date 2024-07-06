@@ -3,12 +3,14 @@ import React, { FunctionComponent, useCallback, useState } from 'react';
 import { TextStyle } from 'react-native';
 import { fonts } from 'src/assets/fonts/fonts';
 import { Button, Screen, Text, TextField } from 'src/components';
+import { useAuth } from 'src/context/auth/interfaces';
 import { LoginUserRequest } from 'src/domain/auth';
 import { errorToast, successToast } from 'src/helpers';
 import validator from 'validator';
 
 const SignInScreen: FunctionComponent = (): React.JSX.Element => {
   const navigation = useNavigation();
+  const { setUser } = useAuth();
 
   const [loginData, setLoginData] = useState<LoginUserRequest>({
     email: '',
@@ -38,6 +40,9 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
     }
 
     //TODO: Run SignIn Logic
+    setUser({
+      id: 'test',
+    });
     successToast({
       message: 'User Logged in successfully logic!',
     });
@@ -46,7 +51,7 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
       email: '',
       password: '',
     });
-  }, [loginData]);
+  }, [loginData, setUser]);
 
   const navToSignUpScreen = () => {
     navigation.navigate('AuthStack', {

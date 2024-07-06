@@ -14,6 +14,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { DEFAULT_CONTAINER } from './src/assets/styles/global';
 import RootStack from 'src/routes/root-stack';
 import { CustomThemeProvider } from 'src/context/theme/theme';
+import { AuthProvider } from 'src/context/auth/auth';
 
 const App: FunctionComponent = () => {
   useAppState();
@@ -21,13 +22,15 @@ const App: FunctionComponent = () => {
 
   return (
     <CustomThemeProvider>
-      <GestureHandlerRootView style={DEFAULT_CONTAINER}>
-        <SafeAreaProvider>
-          <NavigationContainer>
-            <RootStack />
-          </NavigationContainer>
-        </SafeAreaProvider>
-      </GestureHandlerRootView>
+      <AuthProvider>
+        <GestureHandlerRootView style={DEFAULT_CONTAINER}>
+          <SafeAreaProvider>
+            <NavigationContainer>
+              <RootStack />
+            </NavigationContainer>
+          </SafeAreaProvider>
+        </GestureHandlerRootView>
+      </AuthProvider>
     </CustomThemeProvider>
   );
 };
