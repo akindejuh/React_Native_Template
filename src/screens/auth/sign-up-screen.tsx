@@ -50,6 +50,13 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
       return;
     }
 
+    if (registerData.password !== registerData.confirm_password) {
+      errorToast({
+        message: 'Passwords do not match!',
+      });
+      return;
+    }
+
     //TODO: Run SignUp Logic
     successToast({
       message: 'User Registered successfully!',
@@ -154,8 +161,9 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
         disabled={
           !(
             registerData.email &&
+            registerData.user_name &&
             registerData.password &&
-            registerData.user_name
+            registerData.confirm_password
           )
         }
       />
