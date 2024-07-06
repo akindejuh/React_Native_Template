@@ -10,13 +10,18 @@ import validator from 'validator';
 const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
   const navigation = useNavigation();
 
-  const [registerData, setRegisterData] = useState<RegisterUserRequest>({
+  interface IRegisterUserRequest extends RegisterUserRequest {
+    confirm_password: string;
+  }
+
+  const [registerData, setRegisterData] = useState<IRegisterUserRequest>({
     email: '',
-    password: '',
     user_name: '',
+    password: '',
+    confirm_password: '',
   });
 
-  const handleInputChange = (key: keyof RegisterUserRequest, val: string) => {
+  const handleInputChange = (key: keyof IRegisterUserRequest, val: string) => {
     setRegisterData(prev => ({
       ...prev,
       [key]: val,
@@ -52,8 +57,9 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
 
     setRegisterData({
       email: '',
-      password: '',
       user_name: '',
+      password: '',
+      confirm_password: '',
     });
   }, [registerData]);
 
@@ -111,6 +117,21 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
         marginBottom={15}
         value={registerData.password}
         setValue={text => handleInputChange('password', text as string)}
+        placeholder="********"
+        secureTextEntry
+        isPassword
+      />
+
+      <Text
+        text="Confirm Password"
+        marginBottom={7}
+        fontSize={15}
+        fontFamily={fonts.primaryFont_500}
+      />
+      <TextField
+        marginBottom={15}
+        value={registerData.confirm_password}
+        setValue={text => handleInputChange('confirm_password', text as string)}
         placeholder="********"
         secureTextEntry
         isPassword
