@@ -102,7 +102,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
         value={registerData.user_name}
         setValue={text => handleInputChange('user_name', text as string)}
         placeholder="John Doe"
-        autoFocus={true}
+        // autoFocus={true}
       />
 
       <Text
