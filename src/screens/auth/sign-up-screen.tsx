@@ -33,7 +33,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
   const registerUser = useCallback(() => {
     if (!validator.isEmpty(registerData.user_name)) {
       errorToast({
-        message: 'Invalid User Name!',
+        message: 'Invalid Auth Name!',
       });
       return;
     }
@@ -64,7 +64,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
       id: 'test',
     });
     successToast({
-      message: 'User Registered successfully!',
+      message: 'Auth Registered successfully!',
     });
 
     setRegisterData({

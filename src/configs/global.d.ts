@@ -1,4 +1,4 @@
-interface User {
+interface Auth {
   id: string;
 }
 

@@ -3,7 +3,7 @@ import { AuthContext, IAuthProvider } from './interfaces';
 
 export const AuthProvider: IAuthProvider = function AuthProvider({ children }) {
   const [render, setRender] = useState<boolean>(false);
-  const [auth, setAuth] = useState<User | null>(null);
+  const [auth, setAuth] = useState<Auth | null>(null);
 
   useEffect(() => {
     setRender(true);
