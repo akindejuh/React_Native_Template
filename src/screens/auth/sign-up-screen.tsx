@@ -10,7 +10,7 @@ import validator from 'validator';
 
 const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
   const navigation = useNavigation();
-  const { setUser } = useAuth();
+  const { setAuth } = useAuth();
 
   interface IRegisterUserRequest extends RegisterUserRequest {
     confirm_password: string;
@@ -60,7 +60,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
     }
 
     //TODO: Run SignUp Logic
-    setUser({
+    setAuth({
       id: 'test',
     });
     successToast({
@@ -73,7 +73,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
       password: '',
       confirm_password: '',
     });
-  }, [registerData, setUser]);
+  }, [registerData, setAuth]);
 
   const navToSignInScreen = () => {
     navigation.navigate('AuthStack', {

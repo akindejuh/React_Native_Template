@@ -15,22 +15,27 @@ import { DEFAULT_CONTAINER } from './src/assets/styles/global';
 import RootStack from 'src/routes/root-stack';
 import { CustomThemeProvider } from 'src/context/theme/theme';
 import { AuthProvider } from 'src/context/auth/auth';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const App: FunctionComponent = () => {
+  const queryClient = new QueryClient();
+
   useAppState();
   useOnlineManager();
 
   return (
     <CustomThemeProvider>
-      <AuthProvider>
-        <GestureHandlerRootView style={DEFAULT_CONTAINER}>
-          <SafeAreaProvider>
-            <NavigationContainer>
-              <RootStack />
-            </NavigationContainer>
-          </SafeAreaProvider>
-        </GestureHandlerRootView>
-      </AuthProvider>
+      <QueryClientProvider client={queryClient}>
+        <AuthProvider>
+          <GestureHandlerRootView style={DEFAULT_CONTAINER}>
+            <SafeAreaProvider>
+              <NavigationContainer>
+                <RootStack />
+              </NavigationContainer>
+            </SafeAreaProvider>
+          </GestureHandlerRootView>
+        </AuthProvider>
+      </QueryClientProvider>
     </CustomThemeProvider>
   );
 };

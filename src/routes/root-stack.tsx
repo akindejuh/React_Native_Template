@@ -8,8 +8,8 @@ import { useAuth } from 'src/context/auth/interfaces';
 const Root = createNativeStackNavigator<RootStackParamList>();
 
 export default function RootStack(): React.JSX.Element | null {
-  const { user } = useAuth();
-  const authStatus: boolean = user !== null;
+  const { auth } = useAuth();
+  const authStatus: boolean = auth !== null;
 
   return (
     <Root.Navigator

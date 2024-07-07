@@ -10,7 +10,7 @@ import validator from 'validator';
 
 const SignInScreen: FunctionComponent = (): React.JSX.Element => {
   const navigation = useNavigation();
-  const { setUser } = useAuth();
+  const { setAuth } = useAuth();
 
   const [loginData, setLoginData] = useState<LoginUserRequest>({
     email: '',
@@ -40,7 +40,7 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
     }
 
     //TODO: Run SignIn Logic
-    setUser({
+    setAuth({
       id: 'test',
     });
     successToast({
@@ -51,7 +51,7 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
       email: '',
       password: '',
     });
-  }, [loginData, setUser]);
+  }, [loginData, setAuth]);
 
   const navToSignUpScreen = () => {
     navigation.navigate('AuthStack', {

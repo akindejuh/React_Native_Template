@@ -12,8 +12,8 @@ export type IAuthProvider = React.FC<{
 }>;
 
 export type IAuthContext = {
-  user: User | null;
-  setUser: Dispatch<SetStateAction<User | null>>;
+  auth: User | null;
+  setAuth: Dispatch<SetStateAction<User | null>>;
 };
 
 export const AuthContext = createContext<IAuthContext | null>(null);
