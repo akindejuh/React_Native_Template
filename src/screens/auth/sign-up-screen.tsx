@@ -117,6 +117,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
         setValue={text => handleInputChange('email', text as string)}
         placeholder="johndoe@gmail.com"
         inputMode="email"
+        autoCapitalize="none"
       />
 
       <Text
