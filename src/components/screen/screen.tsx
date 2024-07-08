@@ -109,6 +109,7 @@ function ScreenWithScrolling(props: ScreenProps) {
           style={[preset.outer, backgroundStyle]}
           contentContainerStyle={[preset.inner, screenStyle]}
           showsVerticalScrollIndicator={false}
+          nestedScrollEnabled
           showsHorizontalScrollIndicator={false}
           keyboardShouldPersistTaps={
             props.keyboardShouldPersistTaps || 'handled'
