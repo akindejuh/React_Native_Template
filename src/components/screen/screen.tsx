@@ -85,7 +85,7 @@ function ScreenWithScrolling(props: ScreenProps) {
   };
 
   const baseAllowanceStyle: ViewStyle = {
-    marginBottom: (props.baseAllowance || 20) + (isIos ? 20 : 0),
+    marginBottom: (props.baseAllowance || 500) + (isIos ? 20 : 0),
   };
 
   return (

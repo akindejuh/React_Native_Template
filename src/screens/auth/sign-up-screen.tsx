@@ -82,7 +82,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
   };
 
   return (
-    <Screen preset="scroll" baseAllowance={300}>
+    <Screen preset="scroll">
       <Text
         text="Let's get you started!"
         marginTop={40}
