@@ -15,6 +15,7 @@
 		7699B88040F8A987B510C191 /* libPods-baseapp-baseappTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-baseapp-baseappTests.a */; };
 		7D6F73AAF877C240D1116DD1 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = CC91028C8F581F5C7F0F1E5B /* PrivacyInfo.xcprivacy */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		CF5371D8FE244F648814D728 /* fonts.ts in Resources */ = {isa = PBXBuildFile; fileRef = 6CBD38FEF86444B68DE8CE2C /* fonts.ts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		89C6BE57DB24E9ADA2F236DE /* Pods-baseapp-baseappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-baseapp-baseappTests.release.xcconfig"; path = "Target Support Files/Pods-baseapp-baseappTests/Pods-baseapp-baseappTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC91028C8F581F5C7F0F1E5B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = baseapp/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		6CBD38FEF86444B68DE8CE2C /* fonts.ts */ = {isa = PBXFileReference; name = "fonts.ts"; path = "../src/assets/fonts/fonts.ts"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				861976EED52444918BDC0F0C /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -152,6 +155,15 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		861976EED52444918BDC0F0C /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				6CBD38FEF86444B68DE8CE2C /* fonts.ts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -249,6 +261,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				7D6F73AAF877C240D1116DD1 /* PrivacyInfo.xcprivacy in Resources */,
+				CF5371D8FE244F648814D728 /* fonts.ts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
