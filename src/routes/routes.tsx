@@ -7,12 +7,12 @@ import {
   HomeStackParamsList,
 } from './types';
 
-// Used directly in the authStack
+// Stacks to be injected into AppStack
+import HomeStack from './stacks/home-stack';
+
+// Screens for the Auth Stack
 import SignInScreen from 'src/screens/auth/sign-in-screen';
 import SignUpScreen from 'src/screens/auth/sign-up-screen';
-
-// Stack for HomeScreens to be injected into AppStack
-import HomeStack from './stacks/home-stack';
 
 // Screens for Home Stack
 import HomeScreen from 'src/screens/home/home-screen';
