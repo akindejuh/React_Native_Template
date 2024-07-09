@@ -14,7 +14,7 @@ export interface IColors {
 export const colors: { light: IColors; dark: IColors } = {
   light: {
     background: '#fafafa',
-    primary: '#0f9932',
+    primary: '#f06c62',
     secondary: '#b800b8',
     grayText: '#3f3f3f',
     white: '#ffffff',
