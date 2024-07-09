@@ -32,7 +32,7 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
       return;
     }
 
-    if (!loginData.password) {
+    if (validator.isEmpty(loginData.password)) {
       errorToast({
         message: 'Invalid Password!',
       });

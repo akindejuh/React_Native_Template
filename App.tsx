@@ -16,6 +16,7 @@ import RootStack from 'src/routes/root-stack';
 import { CustomThemeProvider } from 'src/context/theme/theme';
 import { AuthProvider } from 'src/context/auth/auth';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import ToastContainer from 'react-native-toast-message';
 
 const App: FunctionComponent = () => {
   const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App: FunctionComponent = () => {
           </GestureHandlerRootView>
         </AuthProvider>
       </QueryClientProvider>
+      <ToastContainer />
     </CustomThemeProvider>
   );
 };
