@@ -64,7 +64,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
       id: 'test',
     });
     successToast({
-      message: 'Auth Registered successfully!',
+      message: 'Account created successfully!',
     });
 
     setRegisterData({

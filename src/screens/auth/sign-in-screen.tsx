@@ -44,7 +44,7 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
       id: 'test',
     });
     successToast({
-      message: 'Auth Logged in successfully logic!',
+      message: 'User Logged in successfully!',
     });
 
     setLoginData({
