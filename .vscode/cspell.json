@@ -11,7 +11,8 @@
     "codegen",
     "reduxjs",
     "jsbundle",
-    "deintegrate"
+    "deintegrate",
+    "astudio"
   ],
   // flagWords - list of words to be always considered incorrect
   "flagWords": []

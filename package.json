@@ -28,6 +28,7 @@
     "pod:update": "cd ios && pod update",
     "pod:reset": "cd ios && pod deintegrate && pod setup && pod install",
     "xcode": "cd ios && xed .",
+    "astudio": "open -a /Applications/Android\\ Studio.app ./android",
     "clean:node": "rm -rf node_modules && yarn cache clean && yarn install && echo 'Clean:Node Completed'",
     "clean:ios": "rm -rf ios/build && cd ios && xcodebuild clean && cd .. && rm -rf ~/Library/Developer/Xcode/DerivedData && watchman watch-del-all && yarn cache clean && echo 'Clean:iOS Completed'",
     "clean:android": "cd android && ./gradlew clean && echo 'Clean:Android Completed'",
