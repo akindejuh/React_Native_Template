@@ -5,7 +5,7 @@ import { fonts } from 'src/assets/fonts/fonts';
 import { Button, Screen, Text, TextField } from 'src/components';
 import { useAuth } from 'src/context/auth/interfaces';
 import { RegisterUserRequest } from 'src/domain/auth';
-import { errorToast, successToast } from 'src/helpers';
+import { errorToast, infoToast, successToast } from 'src/helpers';
 import validator from 'validator';
 
 const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
@@ -33,7 +33,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
   const registerUser = useCallback(() => {
     if (!validator.isEmpty(registerData.user_name)) {
       errorToast({
-        message: 'Invalid Auth Name!',
+        message: 'Invalid User Name!',
       });
       return;
     }
@@ -45,9 +45,9 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
       return;
     }
 
-    if (!registerData.password) {
-      errorToast({
-        message: 'Invalid Password!',
+    if (!validator.isStrongPassword(registerData.password)) {
+      infoToast({
+        message: 'Password is not strong enough!',
       });
       return;
     }
