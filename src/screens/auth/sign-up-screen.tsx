@@ -31,48 +31,54 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
   };
 
   const registerUser = useCallback(() => {
-    if (validator.isEmpty(registerData.user_name)) {
+    try {
+      if (validator.isEmpty(registerData.user_name)) {
+        errorToast({
+          message: 'Invalid User Name!',
+        });
+        return;
+      }
+
+      if (!validator.isEmail(registerData.email)) {
+        errorToast({
+          message: 'Invalid Email!',
+        });
+        return;
+      }
+
+      if (!validator.isStrongPassword(registerData.password)) {
+        infoToast({
+          message: 'Password is not strong enough!',
+        });
+        return;
+      }
+
+      if (registerData.password !== registerData.confirm_password) {
+        errorToast({
+          message: 'Passwords do not match!',
+        });
+        return;
+      }
+
+      //TODO: Run SignUp Logic
+      setAuth({
+        id: 'test',
+      });
+      successToast({
+        message: 'Account created successfully!',
+      });
+
+      setRegisterData({
+        email: '',
+        user_name: '',
+        password: '',
+        confirm_password: '',
+      });
+    } catch (error) {
       errorToast({
-        message: 'Invalid User Name!',
+        message: 'Something went wrong!',
       });
-      return;
     }
-
-    if (!validator.isEmail(registerData.email)) {
-      errorToast({
-        message: 'Invalid Email!',
-      });
-      return;
-    }
-
-    if (!validator.isStrongPassword(registerData.password)) {
-      infoToast({
-        message: 'Password is not strong enough!',
-      });
-      return;
-    }
-
-    if (registerData.password !== registerData.confirm_password) {
-      errorToast({
-        message: 'Passwords do not match!',
-      });
-      return;
-    }
-
-    //TODO: Run SignUp Logic
-    setAuth({
-      id: 'test',
-    });
-    successToast({
-      message: 'Account created successfully!',
-    });
-
-    setRegisterData({
-      email: '',
-      user_name: '',
-      password: '',
-      confirm_password: '',
-    });
   }, [registerData, setAuth]);
 
   const navToSignInScreen = () => {

@@ -25,32 +25,38 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
   };
 
   const loginUser = useCallback(() => {
-    if (!validator.isEmail(loginData.email)) {
-      errorToast({
-        message: 'Invalid Email!',
+    try {
+      if (!validator.isEmail(loginData.email)) {
+        errorToast({
+          message: 'Invalid Email!',
+        });
+        return;
+      }
+
+      if (validator.isEmpty(loginData.password)) {
+        errorToast({
+          message: 'Invalid Password!',
+        });
+        return;
+      }
+
+      //TODO: Run SignIn Logic
+      setAuth({
+        id: 'test',
       });
-      return;
-    }
-
-    if (validator.isEmpty(loginData.password)) {
-      errorToast({
-        message: 'Invalid Password!',
+      successToast({
+        message: 'User Logged in successfully!',
       });
-      return;
+
+      setLoginData({
+        email: '',
+        password: '',
+      });
+    } catch (error) {
+      errorToast({
+        message: 'Something went wrong!',
+      });
     }
-
-    //TODO: Run SignIn Logic
-    setAuth({
-      id: 'test',
-    });
-    successToast({
-      message: 'User Logged in successfully!',
-    });
-
-    setLoginData({
-      email: '',
-      password: '',
-    });
   }, [loginData, setAuth]);
 
   const navToSignUpScreen = () => {
