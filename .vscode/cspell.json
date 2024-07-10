@@ -14,7 +14,8 @@
     "deintegrate",
     "astudio",
     "pressable",
-    "baseapp"
+    "baseapp",
+    "gbenga"
   ],
   // flagWords - list of words to be always considered incorrect
   "flagWords": []
