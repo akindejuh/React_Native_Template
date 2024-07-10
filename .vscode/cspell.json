@@ -13,7 +13,8 @@
     "jsbundle",
     "deintegrate",
     "astudio",
-    "pressable"
+    "pressable",
+    "baseapp"
   ],
   // flagWords - list of words to be always considered incorrect
   "flagWords": []
