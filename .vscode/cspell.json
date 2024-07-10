@@ -12,7 +12,8 @@
     "reduxjs",
     "jsbundle",
     "deintegrate",
-    "astudio"
+    "astudio",
+    "pressable"
   ],
   // flagWords - list of words to be always considered incorrect
   "flagWords": []
