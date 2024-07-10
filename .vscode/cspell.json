@@ -15,7 +15,8 @@
     "astudio",
     "pressable",
     "baseapp",
-    "gbenga"
+    "gbenga",
+    "netinfo"
   ],
   // flagWords - list of words to be always considered incorrect
   "flagWords": []
