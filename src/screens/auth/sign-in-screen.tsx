@@ -26,14 +26,14 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
 
   const loginUser = useCallback(() => {
     try {
-      if (!validator.isEmail(loginData.email)) {
+      if (!validator.isEmail(loginData.email.trim())) {
         errorToast({
           message: 'Invalid Email!',
         });
         return;
       }
 
-      if (validator.isEmpty(loginData.password)) {
+      if (validator.isEmpty(loginData.password.trim())) {
         errorToast({
           message: 'Invalid Password!',
         });

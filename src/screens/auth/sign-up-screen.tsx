@@ -32,28 +32,31 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
 
   const registerUser = useCallback(() => {
     try {
-      if (validator.isEmpty(registerData.user_name)) {
+      if (validator.isEmpty(registerData.user_name.trim())) {
         errorToast({
           message: 'Invalid User Name!',
         });
         return;
       }
 
-      if (!validator.isEmail(registerData.email)) {
+      if (!validator.isEmail(registerData.email.trim())) {
         errorToast({
           message: 'Invalid Email!',
         });
         return;
       }
 
-      if (!validator.isStrongPassword(registerData.password)) {
+      if (!validator.isStrongPassword(registerData.password.trim())) {
         infoToast({
-          message: 'Password is not strong enough!',
+          message:
+            'Password is not strong enough! Please use at least once uppercase, lowercase, number and special character.',
         });
         return;
       }
 
-      if (registerData.password !== registerData.confirm_password) {
+      if (
+        registerData.password.trim() !== registerData.confirm_password.trim()
+      ) {
         errorToast({
           message: 'Passwords do not match!',
         });
