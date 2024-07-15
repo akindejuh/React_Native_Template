@@ -49,7 +49,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
       if (!validator.isStrongPassword(registerData.password.trim())) {
         infoToast({
           message:
-            'Password must be a minimum of 8 characters! Please use at least once uppercase, lowercase, number and special character.',
+            'Password must be 8+ chars with upper, lower, number & special char.',
         });
         return;
       }
