@@ -1,6 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { FunctionComponent, useCallback, useState } from 'react';
-import { TextStyle } from 'react-native';
 import { fonts } from 'src/assets/fonts/fonts';
 import { Button, Screen, Text, TextField } from 'src/components';
 import { useAuth } from 'src/context/auth/interfaces';
@@ -166,7 +165,6 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
         marginTop={15}
         marginBottom={3}
         onPress={navToSignInScreen}
-        textStyle={LINK_TEXT}
       />
 
       <Button
@@ -187,7 +185,3 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
 };
 
 export default SignUpScreen;
-
-const LINK_TEXT: TextStyle = {
-  fontSize: 13,
-};
