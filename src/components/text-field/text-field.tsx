@@ -6,7 +6,6 @@ import { Button } from '../button/button';
 import { fonts } from 'src/assets/fonts/fonts';
 import { useCustomTheme } from 'src/context/theme/interfaces';
 
-const defaultHeight = 53;
 export function TextField({
   value,
   setValue,
@@ -15,6 +14,7 @@ export function TextField({
   leftChild,
   rightChild,
   editable = true,
+  containerHeight = 53,
   ...props
 }: TextFieldProps): React.JSX.Element {
   const { colors } = useCustomTheme();
@@ -26,7 +26,7 @@ export function TextField({
     flexDirection: 'row',
     borderRadius: props.borderRadius || 11,
     backgroundColor: colors.inputBackground,
-    minHeight: defaultHeight,
+    minHeight: containerHeight,
     opacity: editable ? 1 : 0.5,
     paddingHorizontal: 18,
     ...props,
@@ -40,7 +40,7 @@ export function TextField({
     marginVertical: props.multiline ? 3 : 0,
     borderWidth: 0,
     color: colors.grayText,
-    minHeight: defaultHeight,
+    minHeight: containerHeight,
     ...textStyle,
   };
 
@@ -60,10 +60,10 @@ export function TextField({
         onFocus={props.onFocus}
         autoCapitalize={props.autoCapitalize}
         autoCorrect={props.autoCorrect}
-        inputMode={props.inputMode}
-        autoFocus={props.autoFocus}
         onBlur={props.onBlur}
         blurOnSubmit={props.blurOnSubmit}
+        inputMode={props.inputMode}
+        autoFocus={props.autoFocus}
         editable={editable}
         maxLength={props.maxLength}
         autoComplete={props.autoComplete}
@@ -75,7 +75,7 @@ export function TextField({
           alignItems="center"
           backgroundColor={colors.transparent}
           onPress={() => setShowPwd(!showPwd)}
-          height={defaultHeight}
+          height={containerHeight}
           marginLeft={10}
           children={
             <Icon
