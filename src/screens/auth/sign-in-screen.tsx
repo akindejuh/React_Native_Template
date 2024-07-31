@@ -53,7 +53,10 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
       });
     } catch (error) {
       errorToast({
-        message: (error as Error)?.message || 'Something went wrong!',
+        message:
+          (error as any)?.response?.data?.msg ||
+          (error as Error)?.message ||
+          'Something went wrong!',
       });
     }
   }, [loginData, setAuth]);
