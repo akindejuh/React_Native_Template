@@ -16,7 +16,8 @@
     "pressable",
     "baseapp",
     "gbenga",
-    "netinfo"
+    "netinfo",
+    "noclean"
   ],
   // flagWords - list of words to be always considered incorrect
   "flagWords": []
