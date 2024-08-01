@@ -67,6 +67,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
         id: 'test',
       });
       successToast({
+        title: 'Authentication',
         message: 'Account created successfully!',
       });
 
