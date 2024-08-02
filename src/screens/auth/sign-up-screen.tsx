@@ -2,6 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 import React, { FunctionComponent, useCallback, useState } from 'react';
 import { fonts } from 'src/assets/fonts/fonts';
 import { Button, Screen, Text, TextField } from 'src/components';
+import { saveString } from 'src/configs/storage';
+import { strings } from 'src/configs/strings';
 import { useAuth } from 'src/context/auth/interfaces';
 import { RegisterUserRequest } from 'src/domain/auth';
 import { errorToast, infoToast, successToast } from 'src/helpers';
@@ -29,7 +31,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
     }));
   };
 
-  const registerUser = useCallback(() => {
+  const registerUser = useCallback(async () => {
     try {
       if (validator.isEmpty(registerData.user_name.trim())) {
         errorToast({
@@ -63,6 +65,7 @@ const SignUpScreen: FunctionComponent = (): React.JSX.Element => {
       }
 
       //TODO: Run SignUp Logic
+      await saveString(strings.userToken, 'test');
       setAuth({
         id: 'test',
       });

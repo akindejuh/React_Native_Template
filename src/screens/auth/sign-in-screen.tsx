@@ -2,6 +2,8 @@ import { useNavigation } from '@react-navigation/native';
 import React, { FunctionComponent, useCallback, useState } from 'react';
 import { fonts } from 'src/assets/fonts/fonts';
 import { Button, Screen, Text, TextField } from 'src/components';
+import { saveString } from 'src/configs/storage';
+import { strings } from 'src/configs/strings';
 import { useAuth } from 'src/context/auth/interfaces';
 import { LoginUserRequest } from 'src/domain/auth';
 import { errorToast, successToast } from 'src/helpers';
@@ -23,7 +25,7 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
     }));
   };
 
-  const loginUser = useCallback(() => {
+  const loginUser = useCallback(async () => {
     try {
       if (!validator.isEmail(loginData.email.trim())) {
         errorToast({
@@ -40,6 +42,7 @@ const SignInScreen: FunctionComponent = (): React.JSX.Element => {
       }
 
       //TODO: Run SignIn Logic
+      await saveString(strings.userToken, 'test');
       setAuth({
         id: 'test',
       });
