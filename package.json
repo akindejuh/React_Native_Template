@@ -24,7 +24,7 @@
     "adb": "adb reverse tcp:9090 tcp:9090 && adb reverse tcp:3000 tcp:3000 && adb reverse tcp:9001 tcp:9001 && adb reverse tcp:8081 tcp:8081",
     "ios": "react-native run-ios",
     "ios:bundle:assets": "react-native bundle --entry-file index.js --platform ios --dev false --bundle-output ios/main.jsbundle --assets-dest ios",
-    "ios:build": "yarn ios:bundle:assets && cd ios && xcodebuild -workspace baseapp.xcworkspace -scheme baseapp -configuration Release -derivedDataPath build",
+    "ios:build": "cd ios && xcodebuild -workspace baseapp.xcworkspace -configuration Release -scheme baseapp",
     "pod:install": "cd ios && pod install",
     "pod:update": "cd ios && pod update",
     "pod:reset": "cd ios && pod deintegrate && pod setup && pod install",
